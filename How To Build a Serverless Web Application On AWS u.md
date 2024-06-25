@@ -1,26 +1,5 @@
-# Architect and Build an End-to-End AWS Serverless web Application from Scratch
-
-As a beginner on the cloud, it's natural to be concerned about the costs of deploying resources for your projects on AWS. Here's a solution: a simple serverless architecture using AWS Lambda and API Gateway. With this setup, you'll only be charged based on the number of invocations, meaning you pay only for the compute time when your code is actually running. This cost-effective approach allows you to experiment and build without worrying about excessive charges
-
-For this project, we’ll pick five different services from AWS -
-**Amplify, Lambda, IAM, API Gateway and DynamoDB**
-
-**AWS Amplify** - Amplify is like a Swiss Army knife for developers, providing all the necessary tools to build, manage, and scale applications with less hassle and more efficiency. In simple words, it helps to **Build & Host** create the back-end (server side) of your application quickly, without needing to worry about the complex infrastructure. It also allows you to host and manage your front-end (user interface) easily
-
-**API Gateway** - Think of API Gateway as the front door to your application's backend services. It's like a receptionist that directs traffic to the correct department. When someone (a user or another system) wants to interact with your application, they make a request through this front door
-
-**Lambda** - With Lambda, you don't have to worry about the underlying servers where your code runs. AWS takes care of all the infrastructure for you. It’s like cooking in a kitchen where you don’t have to clean up—AWS handles all the messy parts
-
-**DynamoDB** - DynamoDB is a fully managed NoSQL database service, Unlike traditional relational databases that use tables, rows, and columns, DynamoDB uses a more flexible data model, which can store and retrieve any amount of data and handle any level of request traffic. It's perfect for applications that need to process large volumes of data quickly
-***
-
 ## Application architecture
-
-
-
-![Amplify-Page-2.png](../_resources/Amplify-Page-2.png)
-
-
+![Amplify-Architecture](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/51ca1d4b-696a-4477-931a-42f1bfe95432)
 
 **Step 1: Create a new file index.html**
 ```html
@@ -40,35 +19,26 @@ For this project, we’ll pick five different services from AWS -
 #
 **Step 2: Log on to AWS - Navigate to AWS Amplify**
 
-![amlify-openingpage.png](../_resources/amlify-openingpage.png)
+![amlify-openingpage](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9a931089-77c5-48c9-9f5a-ae6435efaa54)
 
 - Create a New App and Use “Deploy without Git
 
-
-![naming.png](../_resources/naming.png)
-
+![naming](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9eeb38f0-253c-4cd8-8fa4-dacfb5f4c519)
 
 - Update the App & Branch name
 - Zip your index.html file and drop the folder to deploy
 
-
-
-![link-page2.png](../_resources/link-page2.png)
-
+![link-page2](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9c3a3634-f3af-4a11-a9e7-306d2e9c79ae)
 
 After the deployment, ensure the application serves as expected (Visit deployed URL)
 #
 **Step 3: Navigate to AWS Lambda**
 
-
-![Lambda2.png](../_resources/Lambda2.png)
+![Lambda2](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/8d0a46ab-fb75-4a33-9ad2-aedc03b3b3ea)
 
 - Create a New function (Author from scratch), name the function & Runtime **Python 3.9**, and leave other options as default
 
-
-
-![sourcecode.png](../_resources/sourcecode.png)
-
+![sourcecode](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/40da6e73-f3db-4da0-b8c8-9b050bfeb0d3)
 
 - Navigate to the Code-source. Upload & Deploy the code
 ```
@@ -99,26 +69,28 @@ def lambda_handler(event, context):
 ```
 
 
-![test.png](../_resources/test.png) 
-- Ensure the result returns with status code 200 
+![test](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/d497130a-6256-4c94-a99f-c9a15c687986)
 
-![result.png](../_resources/result.png)
+- Ensure the result returns with status code 200
+
+![result](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9f18a1e0-84be-426f-a026-6dea4a82ce1a)
+
 #
 **Step 4: Navigate to AWS API Gateway**
 - Use the REST API to build & create a new API with default options
 
+![api](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/6396eb00-f40e-4352-89ea-a4f63b62d307)
 
-![api.png](../_resources/api.png)
 - Now, create a new **post** method using lambda intergration, select the region & lambda and leave the other option as the default
 
+![post2](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/53f7572b-ce57-4e20-bf70-a6c2c607a6d6)
 
-![post2.png](../_resources/post2.png)
 
 API gateway needs to access Lamba to trigger the function
 - Click on the ‘/’ path and enable CORS
 
+![cors](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/7f4a950e-7f05-4d56-ab9e-57c60bc64c5b)
 
-![cors.png](../_resources/cors.png)
 - Enable "**PUT**" option check box and leave the other option as the default
 
 
