@@ -93,20 +93,19 @@ API gateway needs to access Lamba to trigger the function
 
 - Enable "**PUT**" option check box and leave the other option as the default
 
-
-![settings.png](../_resources/settings.png)
+![settings](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/311df6e0-fe3e-4a19-bb8d-16e13d405ed7)
 
 - Now, Deploy API and Update the stage details
-![deployapi.png](../_resources/deployapi.png)
 
+![deployapi](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9952333f-508f-49a1-adc1-75f761c97d81)
 
 - then, Copy the Invoke URL link from the stage details (save it notes for later)
 
-![stage.png](../_resources/stage.png)
-
+![stage](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/9419d9a3-cc06-401a-971b-e978a37119d9)
 
 - Now test the functionality. Use the below function on the request body, and ensure it results with 200 status code
-![testapi.png](../_resources/testapi.png)
+![testapi](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/060779a6-e4f3-44b0-b546-a93a37ce27b0)
+
 ```
 {
     "base":10,
@@ -118,16 +117,19 @@ API gateway needs to access Lamba to trigger the function
 - Create a new DynamoDB (Leave the other option as the default)
 
 
-![dynamodb.png](../_resources/dynamodb.png)
+![dynamodb](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/61a3fcf6-ab06-4677-ae0b-4abb5a52c272)
+
 - Copy the ARN details from the additional info (save it for later)
 
 #
 **Step 6: Permission to lambda & update the code**
 - Head back to the lambda and click on the newly created role
-![createdrole.png](../_resources/createdrole.png)
+![createdrole](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/38572e3a-2a63-4e99-bb63-3c162296ec6a)
+
 - Create a new inline policy on the permission tab to allow **Lambda** to access **DynamoDB**. Use the below JSON to update the policy
 
-![policy.png](../_resources/policy.png)
+![policy](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/d5c1f197-78cc-4c3e-b4d4-043392df31e8)
+
 ```
 {
 "Version": "2012-10-17",
@@ -195,8 +197,7 @@ def lambda_handler(event, context):
 - Now, test the code and the ensure data's are pushed to DyanomoDB
 - Jump back to DynamoDB, Click on "**Explore table items**" items and the data’s should be saved
 
-
-![dy.png](../_resources/dy.png)
+![dy](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/68b4d0e1-d08b-49c5-94ef-cf4c4dae4d0c)
 
 **Now, its time to update the index.html page on Amplify**
 #
@@ -287,10 +288,9 @@ def lambda_handler(event, context):
 - Now, drop the zip folder to re-deploy
 - Ensure the Web page results as expected
 
+![app](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/3bee0bb6-49a2-408a-bf78-35c1c8b03f58)
 
-![app.png](../_resources/app.png)
-
-
-
-
+#
+That’s it, now we have a serverless web application hosted on AWS using Amplify & API Gateway
+#
 **Optional: You can use your custom DNS to update the records; Use any DNS manager (Go Daddy, Route-53, etc.) Refer to the official documentation from AWS on configuring the domain** -  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html)
