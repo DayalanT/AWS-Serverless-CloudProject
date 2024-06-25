@@ -14,3 +14,5 @@ For this project, we’ll pick five different services from AWS -
 
 **DynamoDB** - DynamoDB is a fully managed NoSQL database service, Unlike traditional relational databases that use tables, rows, and columns, DynamoDB uses a more flexible data model, which can store and retrieve any amount of data and handle any level of request traffic. It's perfect for applications that need to process large volumes of data quickly
 ***
+
+![image](https://github.com/DayalanT/AWS-Serverless-CloudProject/assets/108342835/8a8cfba7-ab74-48cc-ac7a-e619506de1f9)
